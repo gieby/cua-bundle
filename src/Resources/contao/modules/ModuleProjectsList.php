@@ -99,7 +99,7 @@ class ModuleProjectsList extends \Module {
                 if ($entry['main_img_size'] !='') {
                     $size = array(945,260,crop);
                 }
-                $dataObject->thumbnail = Image::create($fileModel->path, $size)->executeResize()->getResizedPath();
+                $dataObject->thumbnail = \Image::create($fileModel->path, $size)->executeResize()->getResizedPath();
              }
 
              //Anzahl der befüllten Spalten aktualisieren...
