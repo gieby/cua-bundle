@@ -1,0 +1,20 @@
+<div class="<?php echo $this->class; ?> cua_projects_filter block"<?php echo $this->cssID; ?>>
+    <?php if ($this->headline): ?>
+        <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+    <?php endif; ?>
+
+    <?php foreach ($this->statusLinks as $entry => $link): ?>
+        <a href="<?php echo $link; ?>"><?php echo $entry; ?></a>
+    <?php endforeach; ?>
+</div>
+
+
+<div class="<?php echo $this->class; ?> cua_projects_filter block"<?php echo $this->cssID; ?>>
+    <?php if ($this->headline): ?>
+        <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+    <?php endif; ?>
+
+    <?php foreach ($this->categoryLinks as $entry => $link): ?>
+        <a href="<?php echo $link; ?>"><?php echo $entry; ?></a>
+    <?php endforeach; ?>
+</div>
