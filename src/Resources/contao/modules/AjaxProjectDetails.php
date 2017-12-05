@@ -1,5 +1,7 @@
 <?php
 
+namespace yupdesign\CUA;
+
 class AjaxProjectDetails extends \System {
     public function getDetails() {
         if ($this->Input->get('function') == 'projectDetails') {

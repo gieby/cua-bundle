@@ -1,5 +1,7 @@
 <?php
 
+namespace yupdesign\CUA;
+
 class ProjectListHooks {
 
     public function getParams($arrFragments) {
