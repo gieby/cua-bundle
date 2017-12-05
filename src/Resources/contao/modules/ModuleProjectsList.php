@@ -1,7 +1,5 @@
 <?php
 
-namespace yupdesign\CUA;
-
 class ModuleProjectsList extends \Module {
     
     /**
@@ -44,7 +42,7 @@ class ModuleProjectsList extends \Module {
 */
         $query .= ' ORDER BY date DESC';
        
-        $rs = Database::getInstance()
+        $rs = \Database::getInstance()
             ->query($query);
 
         //ein leeres Array für alle Projekte, die wir nachfolgend aufbearbeiten
@@ -96,7 +94,7 @@ class ModuleProjectsList extends \Module {
 
              //Thumbnail generieren und Asset-URL anhängen
              if ($entry['main_img'] != '') {
-                $fileModel = FilesModel::findByUuid($entry['main_img']);
+                $fileModel = \FilesModel::findByUuid($entry['main_img']);
                 $size = array(459,260,crop);
                 if ($entry['main_img_size'] !='') {
                     $size = array(945,260,crop);
