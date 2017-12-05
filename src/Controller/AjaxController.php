@@ -14,9 +14,9 @@ class AjaxController extends Controller
      *
      * @return JsonResponse
      *
-     * @Route("/ajax", name="ajax_frontend", defaults={"_scope" = "frontend", "_token_check" = false})
+     * @Route("/ajax/{test}", name="ajax_frontend", defaults={"_scope" = "frontend", "_token_check" = false})
      */
-    public function ajaxAction()
+    public function ajaxAction($test)
     {
 
         $this->container->get('contao.framework')->initialize();
@@ -25,7 +25,7 @@ class AjaxController extends Controller
 
         $data = $controller->run();
 
-        $response = new JsonResponse(array('result' => 'success', 'data' => $data));
+        $response = new JsonResponse(array('result' => 'success','token' => $test, 'data' => $data));
         $response->send();
     }
 
