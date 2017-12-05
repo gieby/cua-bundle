@@ -14,7 +14,7 @@ use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 /**
  * @author Stephan Gieb
  */
-class Plugin implements BundlePluginInterface
+class Plugin implements BundlePluginInterface, , RoutingPluginInterface
 {
     /**
      * {@inheritdoc}
