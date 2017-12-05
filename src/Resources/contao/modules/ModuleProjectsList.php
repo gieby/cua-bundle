@@ -2,7 +2,7 @@
 
 namespace yupdesign\CUA;
 
-class ModuleProjectsList extends Module {
+class ModuleProjectsList extends \Module {
     
     /**
 	 * Template

@@ -2,7 +2,7 @@
 
 namespace yupdesign\CUA;
 
-class ProjectListFilter extends Module {
+class ProjectListFilter extends \Module {
     
     /**
 	 * Template

@@ -1,6 +1,6 @@
 <?php
 
-namespace yupdesign\CUA;
+namespace yupdesign\CUA\Module;
 
 class AjaxProjectDetails extends \System {
     public function getDetails() {
