@@ -16,7 +16,7 @@ class AjaxController extends Controller
      *
      * @Route("/ajax/{test}", name="ajax_frontend", defaults={"_scope" = "frontend", "_token_check" = false})
      */
-    public function ajaxAction($test)
+    public function ajaxAction($test = '')
     {
 
         $this->container->get('contao.framework')->initialize();
