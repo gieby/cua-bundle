@@ -23,5 +23,9 @@ array_insert($GLOBALS['FE_MOD'], 2, array(
 	'miscellaneous' => array(
 		'cua_project_list'   =>  'yupdesign\CUA\ModuleProjectsList',
 		'cua_project_list_filter'   =>  'yupdesign\CUA\ProjectListFilter'
+	),
+	'cua_ajax' => array
+	(
+			'ajax'    => 'yupdesign\CUA\ModuleAjax'
 	)
 ));
