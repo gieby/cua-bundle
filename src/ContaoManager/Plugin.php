@@ -18,7 +18,7 @@ use Symfony\Component\HttpKernel\KernelInterface;
 /**
  * @author Stephan Gieb
  */
-class Plugin implements BundlePluginInterface, , RoutingPluginInterface
+class Plugin implements BundlePluginInterface, RoutingPluginInterface
 {
     /**
      * {@inheritdoc}
