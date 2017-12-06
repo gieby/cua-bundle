@@ -149,6 +149,8 @@ class FrontendAjax extends \Frontend
             {
                 $dataObject->media .= \Controller::getContentElement($objElements->id);
             }
+
+            str_replace('TL_FILES_URL',''$dataObject->media);
         }
 
 
