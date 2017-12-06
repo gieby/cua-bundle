@@ -21,11 +21,11 @@ class AjaxController extends Controller
 
         $this->container->get('contao.framework')->initialize();
 
-        $controller = new \FrontendAjax();
+        $controller = new FrontendAjax();
 
         $data = $controller->run();
 
-        $response = new \JsonResponse(array('result' => 'success','token' => $test, 'data' => $data));
+        $response = new JsonResponse(array('result' => 'success','token' => $test, 'data' => $data));
         $response->send();
     }
 
