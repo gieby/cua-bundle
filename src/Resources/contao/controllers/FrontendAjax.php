@@ -31,7 +31,7 @@ class FrontendAjax extends \Frontend
      *
      * @return string
      */
-    public function run($id)
+    public function fetchProject($id)
     {
         $rs = \Database::getInstance()->prepare("SELECT * FROM tl_cuaprojects WHERE id = ?")->execute($id);
         $responseObject = $rs->fetchAllAssoc()[0];
@@ -154,6 +154,54 @@ class FrontendAjax extends \Frontend
             $dataObject->media = json_decode(str_replace('TL_FILES_URL','',json_encode($dataObject->media)));
         }
 
+
+        return $dataObject;
+    }
+
+     /**
+     * Run the controller
+     *
+     * @return string
+     */
+    public function fetchTour($id)
+    {
+        $rs = \Database::getInstance()->prepare("SELECT * FROM tl_cuatours WHERE id = ?")->execute($id);
+        $responseObject = $rs->fetchAllAssoc()[0];
+
+        //Antwort als Object zusammenbauen
+        $dataObject = (object)[];
+
+        //  Werte aus Response übernehmen
+        $dataObject->title = $responseObject['title'];
+        $dataObject->place = $responseObject['place'];
+        $dataObject->description = $responseObject['description'];
+        $dataObject->media = '';
+        $dataObject->content = '
+            <div class="contentBlock">
+                <p class="tourTitle">' . $responseObject['title'] . '</p>
+                <p class="tourPlace">' . $responseObject['place'] . '</p>
+            </div>
+            <div class="contentBlock tourDescription">
+                ' . $responseObject['description'] . '
+            </div>
+            <div class="contentBlock tourInfos">';
+        
+        $closing = '</div>';
+        
+        $dataObject->content .= $closing;
+                    
+        //  Falls weitere Elemente hinzugefügt wurden, werden diese mit ausgegeben
+        $objElements = \ContentModel::findPublishedByPidAndTable($id, 'tl_cuatours');
+        if ($objElements !== null)
+        {
+            while ($objElements->next())
+            {
+                $dataObject->media .= \Controller::getContentElement($objElements->id);
+            }
+
+            $dataObject->media = json_decode(str_replace('TL_FILES_URL','',json_encode($dataObject->media)));
+        }
+            
 
         return $dataObject;
     }

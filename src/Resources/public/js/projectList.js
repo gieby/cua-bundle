@@ -72,7 +72,7 @@ function prepareDetailArea(id,callback) {
 
 // lädt die Details zu einem Projekt
 function getDetails(id,callback) {
-    $.getJSON("/ajax/" + id, success = function (data) {
+    $.getJSON("/ajax/project/" + id, success = function (data) {
             $('#cua_project_detail[data-id="'+id+'"] #detailContent').html(data['content']);
             $('#cua_project_detail[data-id="'+id+'"] #detailMedia').html(data['media']);
             $('#cua_project_detail[data-id="'+id+'"]').slideDown(400, function() {
