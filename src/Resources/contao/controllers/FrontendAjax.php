@@ -1,6 +1,6 @@
 <?php
 
-namespace yupdesign\CUABundle;
+namespace yupdesign\CUA;
 
 use Psr\Log\LogLevel;
 use Contao\CoreBundle\Monolog\ContaoContext;

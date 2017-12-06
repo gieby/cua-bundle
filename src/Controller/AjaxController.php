@@ -5,7 +5,7 @@ namespace yupdesign\CUABundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use yupdesign\CUABundle\FrontendAjax;
+use yupdesign\CUA\FrontendAjax;
 
 class AjaxController extends Controller
 {
