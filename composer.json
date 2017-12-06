@@ -20,7 +20,7 @@
 			"yupdesign\\CUABundle\\": "src/"
 		},
 		"classmap": [
-			"src/Resources/contao/modules"
+			"src/Resources/contao/"
 		],
 		"exclude-from-classmap": [
 			"src/Resources/contao/config/",
