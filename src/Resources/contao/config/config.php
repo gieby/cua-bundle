@@ -26,6 +26,6 @@ array_insert($GLOBALS['FE_MOD'], 2, array(
 	),
 	'cua_ajax' => array
 	(
-			'ajax'    => 'yupdesign\\CUABundle\\ModuleAjax'
+			'ajax'    => 'yupdesign\CUA\ModuleAjax'
 	)
 ));

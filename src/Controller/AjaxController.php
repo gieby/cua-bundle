@@ -5,7 +5,7 @@ namespace yupdesign\CUABundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use yupdesign\CUABundle\FrontendAjax;
+use yupdesign\CUA\FrontendAjax;
 
 class AjaxController extends Controller
 {
@@ -14,9 +14,9 @@ class AjaxController extends Controller
      *
      * @return JsonResponse
      *
-     * @Route("/ajax/{test}", name="ajax_frontend", defaults={"_scope" = "frontend", "_token_check" = false})
+     * @Route("/ajax", name="ajax_frontend", defaults={"_scope" = "frontend", "_token_check" = false})
      */
-    public function ajaxAction($test = '')
+    public function ajaxAction()
     {
 
         $this->container->get('contao.framework')->initialize();
@@ -25,7 +25,7 @@ class AjaxController extends Controller
 
         $data = $controller->run();
 
-        $response = new JsonResponse(array('result' => 'success','token' => $test, 'data' => $data));
+        $response = new JsonResponse(array('result' => 'success', 'data' => $data));
         $response->send();
     }
 
