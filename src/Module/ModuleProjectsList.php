@@ -1,5 +1,7 @@
 <?php
 
+namespace  yupdesign\CUA\Module;
+
 class ModuleProjectsList extends \Module {
     
     /**
