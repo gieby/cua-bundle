@@ -1,5 +1,5 @@
 <?php
-namespace yupdesign\CUABundle;
+namespace yupdesign\CUABundle\Module;
 
 class ModuleProjectsList extends \Module {
     
