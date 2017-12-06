@@ -151,7 +151,7 @@ class FrontendAjax extends \Frontend
             }
 
             //das ist nur ein Bandaid-Fix....
-            str_replace('TL_FILES_URL','',$dataObject->media);
+            $dataObject->media = json_decode(str_replace('TL_FILES_URL','',json_encode($dataObject->media)));
         }
 
 
