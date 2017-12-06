@@ -1,8 +1,6 @@
 <?php
 
-namespace  yupdesign\CUA\Module;
-
-class ModuleProjectsList extends \Module {
+class ModuleProjectsList extends Module {
     
     /**
 	 * Template
