@@ -21,7 +21,7 @@ class AjaxController extends Controller
 
         $this->container->get('contao.framework')->initialize();
 
-        $controller = new FrontendAjax();
+        $controller = new yupdesign\CUA\FrontendAjax();
 
         $data = $controller->run();
 
