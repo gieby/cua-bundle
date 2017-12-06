@@ -13,7 +13,7 @@ class ModuleProjectsList extends \Module {
 
         // JavaScript und CSS des RocksolidSliders einbinden!
         // (Wenn nicht installiert, schmeisst das Teil ja ne Fehlermeldung..)
-        $rsAssetsDir = 'system/modules/rocksolid-slider/assets';
+        $rsAssetsDir = 'web/bundles/rocksolidslider';
         //beide Standard-Skripte einbinden!        
         $GLOBALS['TL_JAVASCRIPT'][] = $rsAssetsDir . '/js/rocksolid-slider.min.js|static';
         $GLOBALS['TL_CSS'][] = $rsAssetsDir . '/css/rocksolid-slider.min.css||static';
@@ -24,7 +24,7 @@ class ModuleProjectsList extends \Module {
         }
 
         // jetzt binden wir noch unserer eigenes JavaScript ein - damit liegt das nicht in der Seitenvorlage rum usw.$_COOKIE
-        $cuaAssetsDir = 'system/modules/cua-projects/assets';
+        $cuaAssetsDir = 'web/bundles/yupdesigncua';
         $GLOBALS['TL_JAVASCRIPT'][] = $cuaAssetsDir . '/js/projectList.js|static';
 
         // Query bauen
