@@ -152,6 +152,6 @@ class FrontendAjax extends \Frontend
         }
 
 
-        return json_encode($dataObject);
+        return $dataObject;
     }
 }
