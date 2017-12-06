@@ -31,9 +31,9 @@ class FrontendAjax extends \Frontend
      *
      * @return string
      */
-    public function run()
+    public function run($id)
     {
 
-        return ['Hello World!'];
+        return ['Hello World!'.$id];
     }
 }
