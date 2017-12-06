@@ -25,7 +25,7 @@ class AjaxController extends Controller
 
         $data = $controller->run($id);
 
-        $response = new JsonResponse(array('result' => 'success', 'data' => $data));
+        $response = new JsonResponse($data);
         $response->send();
     }
 
