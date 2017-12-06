@@ -142,7 +142,7 @@ class FrontendAjax extends \Frontend
         $dataObject->content .= $closing;
                     
         //  Falls weitere Elemente hinzugefügt wurden, werden diese mit ausgegeben
-        $objElements = \ContentModel::findPublishedByPidAndTable($this->Input->get('projectId'), 'tl_cuaprojects');
+        $objElements = \ContentModel::findPublishedByPidAndTable($id, 'tl_cuaprojects');
         if ($objElements !== null)
         {
             while ($objElements->next())
