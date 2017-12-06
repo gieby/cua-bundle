@@ -1,5 +1,7 @@
 <?php
 
+namespace yupdesign\CUABundle;
+
 class ProjectListFilter extends \Module {
     
     /**
