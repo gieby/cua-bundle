@@ -150,6 +150,7 @@ class FrontendAjax extends \Frontend
                 $dataObject->media .= \Controller::getContentElement($objElements->id);
             }
 
+            //das ist nur ein Bandaid-Fix....
             str_replace('TL_FILES_URL','',$dataObject->media);
         }
 
