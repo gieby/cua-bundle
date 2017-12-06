@@ -33,7 +33,7 @@ class FrontendAjax extends \Frontend
      */
     public function run($id)
     {
-        $queryString = 'SELECT * FROM tl_cuaprojects WHERE id='. $id
+        $queryString = 'SELECT * FROM tl_cuaprojects WHERE id='. $id;
         $rs = \Database::getInstance()
             ->query($queryString);
         $responseObject = $rs->fetchAllAssoc()[0];
