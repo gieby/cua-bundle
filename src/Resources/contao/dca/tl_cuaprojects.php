@@ -1,5 +1,9 @@
 <?php
 
+if (TL_MODE === 'BE') {
+	$GLOBALS['TL_CSS'][] = 'bundles/cuabundle/css/backend.css';
+}
+
 /**
  * Table tl_cuaprojects
  */
