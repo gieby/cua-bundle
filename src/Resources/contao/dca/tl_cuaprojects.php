@@ -1,7 +1,7 @@
 <?php
 
 if (TL_MODE === 'BE') {
-	$GLOBALS['TL_CSS'][] = 'bundles/cuabundle/css/backend.css';
+	$GLOBALS['TL_CSS'][] = 'bundles/yupdesigncua/css/backend.css';
 }
 
 /**
