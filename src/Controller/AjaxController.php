@@ -14,19 +14,22 @@ class AjaxController extends Controller
      *
      * @return JsonResponse
      *
-     * @Route("/ajax/{test}", name="ajax_frontend", defaults={"_scope" = "frontend", "_token_check" = false})
+     * @Route("/ajax/{cat}/{id}", name="ajax_frontend", defaults={"_scope" = "frontend", "_token_check" = false})
      */
-    public function ajaxAction($test = '')
+    public function ajaxAction($cat='project',$id='')
     {
 
         $this->container->get('contao.framework')->initialize();
 
-        $controller = new FrontendAjax();
+        $controller = new \yupdesign\CUA\FrontendAjax();
 
-        $data = $controller->run();
+        if($cat == 'project') {
+            $data = $controller->fetchProject($id);
+        } else {
+            $data = $controller->fetchTour($id);
+        }
 
-        $response = new JsonResponse(array('result' => 'success','token' => $test, 'data' => $data));
+        $response = new JsonResponse($data);
         $response->send();
     }
-
 }
