@@ -190,7 +190,7 @@ $GLOBALS['TL_DCA']['tl_cuaprojects'] = array
 			'label'						=> &$GLOBALS['TL_LANG']['tl_cuaprojects']['hide_in_all'],
 			'exclude'					=> true,
 			'inputType'					=> 'checkbox',
-			'eval'						=> array('isBoolean'=>true,'tl_class'=>'long clr', 'style'=>'margin-top: 36px;'),
+			'eval'						=> array('isBoolean'=>true,'tl_class'=>'long clr'),
 			'sql'						=> "char(1) NOT NULL default ''"
 		),
 		'status' => array
