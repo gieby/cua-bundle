@@ -9,9 +9,8 @@ function lazyLoadThumbs() {
 
     for (let i = 0; i < thumbs.length; i++) {
         var pic = thumbs.item(i).firstElementChild;
-        var bckgrnd = 'url(' + pic.getAttribute('data-src') + ')';
-        
-        pic.style.backgroundImage = bckgrnd;
+        pic.setAttribute('src',pic.getAttribute('data-src'));
+        pic.removeAttribute('data-src');
     }
 }
 
