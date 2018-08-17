@@ -4,6 +4,16 @@ var stateInfo = {
     'loadingState': 0 // 0: nichts wird geladen bzw. alles geladen; 1: Inhalte werden geladen
 }
 
+function lazyLoadThumbs() {
+    var thumbs = document.getElementsByClassName('projectThumb');
+
+    for (let i = 0; i < thumbs.length; i++) {
+        var elem = thumbs.index(i);
+        var pic = elem.firstElementChild;
+        var bckgrnd = 'url(' + pic.getAttribute('data-src') + ')';
+        pic.setAttribute('background-image',bckgrnd);
+    }
+}
 
 function handlePortfolioClick(sender) {
     //Funktion regelt, welche Subfunktionen aufgerufen werden, basierend auf Zustand
