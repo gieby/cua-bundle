@@ -1,0 +1,9 @@
+.mod_cua_project_list_vue .cua_project_entry .project_thumb{
+    position: relative;
+    background-color: #ededed;
+    padding-bottom: 56.6449%;
+}
+
+.mod_cua_project_list_vue .cua_project_entry.cua_project_wide .project_thumb {
+    padding-bottom: 27.5132%;
+}

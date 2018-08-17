@@ -26,6 +26,7 @@ class ModuleProjectsListVue extends \Module {
         // jetzt binden wir noch unserer eigenes JavaScript ein - damit liegt das nicht in der Seitenvorlage rum usw.$_COOKIE
         $cuaAssetsDir = 'web/bundles/yupdesigncua';
         $GLOBALS['TL_JAVASCRIPT'][] = $cuaAssetsDir . '/js/projectListVue.js|static';
+        $GLOBALS['TL_CSS'][] = $cuaAssetsDir . 'css/vue.css|static';
 
         // Query bauen
         $query = 'SELECT id, title, shortTitle, place, main_img, main_img_size FROM tl_cuaprojects WHERE publish ="1"  ORDER BY date DESC';
