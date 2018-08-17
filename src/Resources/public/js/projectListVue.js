@@ -122,3 +122,5 @@ function displayDetails(id) {
         });
     });
 }
+
+document.addEventListener("DOMContentLoaded", lazyLoadThumbs);
