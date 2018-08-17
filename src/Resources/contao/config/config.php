@@ -22,6 +22,7 @@ $GLOBALS['BE_MOD']['content']['cua_projects'] = array (
 array_insert($GLOBALS['FE_MOD'], 2, array(
 	'miscellaneous' => array(
 		'cua_project_list'   =>  'yupdesign\\CUABundle\\Module\\ModuleProjectsList',
+		'cua_project_list_vue'   =>  'yupdesign\\CUABundle\\Module\\ModuleProjectsListVue',
 		'cua_project_list_filter'   =>  'yupdesign\\CUABundle\\Module\\ProjectListFilter'
 	),
 	'cua_ajax' => array

@@ -1,13 +1,13 @@
 <?php
 namespace yupdesign\CUABundle\Module;
 
-class ModuleProjectsList extends \Module {
+class ModuleProjectsListVue extends \Module {
     
     /**
 	 * Template
 	 * @var string
 	 */
-    protected $strTemplate = 'mod_cua_project_list';
+    protected $strTemplate = 'mod_cua_project_list_vue';
 
     protected function compile() {
 
@@ -25,7 +25,7 @@ class ModuleProjectsList extends \Module {
 
         // jetzt binden wir noch unserer eigenes JavaScript ein - damit liegt das nicht in der Seitenvorlage rum usw.$_COOKIE
         $cuaAssetsDir = 'web/bundles/yupdesigncua';
-        $GLOBALS['TL_JAVASCRIPT'][] = $cuaAssetsDir . '/js/projectList.js|static';
+        $GLOBALS['TL_JAVASCRIPT'][] = $cuaAssetsDir . '/js/projectListVue.js|static';
 
         // Query bauen
         $query = 'SELECT id, title, shortTitle, place, main_img, main_img_size FROM tl_cuaprojects WHERE publish ="1"  ORDER BY date DESC';
