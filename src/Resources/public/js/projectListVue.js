@@ -123,4 +123,4 @@ function displayDetails(id) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", function() {lazyLoadThumbs()});
+window.addEventListener("load", function() {lazyLoadThumbs()});
