@@ -8,10 +8,10 @@ function lazyLoadThumbs() {
     var thumbs = document.getElementsByClassName('projectThumb');
 
     for (let i = 0; i < thumbs.length; i++) {
-        var elem = thumbs.index(i);
-        var pic = elem.firstElementChild;
+        var pic = thumbs.item(i).firstElementChild;
         var bckgrnd = 'url(' + pic.getAttribute('data-src') + ')';
-        pic.setAttribute('background-image',bckgrnd);
+        
+        pic.style.backgroundImage = bckgrnd;
     }
 }
 
