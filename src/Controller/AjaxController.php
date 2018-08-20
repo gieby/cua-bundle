@@ -24,7 +24,7 @@ class AjaxController extends Controller
         $controller = new \yupdesign\CUA\FrontendAjax();
 
         if($cat == 'project') {
-            if($id == '') {
+            if($id == 'list') {
                 $response = new JsonResponse('It works');
                 $response->send();
             }
