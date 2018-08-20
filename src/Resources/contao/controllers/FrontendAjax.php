@@ -166,7 +166,27 @@ class FrontendAjax extends \Frontend
         $rs = \Database::getInstance()->prepare('SELECT id, title, shortTitle, place, main_img, main_img_size FROM tl_cuaprojects WHERE publish ="1"  ORDER BY date DESC')->execute();
         $responseObject = $rs->fetchAllAssoc();
 
-        return json_encode($responseObject);
+        $returnData = [];
+
+        while ($responseObject->next()) {
+            $dataObject = (object)[];
+            $dataObject->id = $responseObject['id'];
+            $dataObject->title = ($responseObject['shortTitle'] != '') ? $responseObject['shortTitle'] : $responseObject['title'];
+            $dataObject->place = $responseObject['place'];
+
+            if ($responseObject['main_img'] != '') {
+                $fileModel = \FilesModel::findByUuid($responseObject['main_img']);
+                $size = array(459,260,crop);
+                if ($responseObject['main_img_size'] !='') {
+                    $size = array(945,260,crop);
+                }
+                $dataObject->thumbnail = \Image::create($fileModel->path, $size)->executeResize()->getResizedPath();
+            }
+
+            $returnData[] = $dataObject;
+        }
+
+        return $returnData;
     }
 
      /**
