@@ -26,8 +26,9 @@ class AjaxController extends Controller
         if($cat == 'project') {
             if($id == 'list') {
                 $data = $controller->fetchAllProjects();
+            } else {
+                $data = $controller->fetchProject($id);
             }
-            $data = $controller->fetchProject($id);
         } else {
             $data = $controller->fetchTour($id);
         }
