@@ -168,16 +168,16 @@ class FrontendAjax extends \Frontend
 
         $returnData = [];
 
-        while ($responseObject->next()) {
+        foreach ($responseObject as $k => $project) {
             $dataObject = (object)[];
-            $dataObject->id = $responseObject['id'];
-            $dataObject->title = ($responseObject['shortTitle'] != '') ? $responseObject['shortTitle'] : $responseObject['title'];
-            $dataObject->place = $responseObject['place'];
+            $dataObject->id = $project['id'];
+            $dataObject->title = ($project['shortTitle'] != '') ? $project['shortTitle'] : $project['title'];
+            $dataObject->place = $project['place'];
 
-            if ($responseObject['main_img'] != '') {
-                $fileModel = \FilesModel::findByUuid($responseObject['main_img']);
+            if ($project['main_img'] != '') {
+                $fileModel = \FilesModel::findByUuid($project['main_img']);
                 $size = array(459,260,crop);
-                if ($responseObject['main_img_size'] !='') {
+                if ($project['main_img_size'] !='') {
                     $size = array(945,260,crop);
                 }
                 $dataObject->thumbnail = \Image::create($fileModel->path, $size)->executeResize()->getResizedPath();
