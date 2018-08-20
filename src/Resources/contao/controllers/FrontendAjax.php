@@ -158,6 +158,17 @@ class FrontendAjax extends \Frontend
         return $dataObject;
     }
 
+    /**
+     * Liefert alle Projekte in vereinfachter Form für die Übersicht zurück.
+     * @return string
+     */
+    public function fetchAllProjects() {
+        $rs = \Database::getInstance()->prepare('SELECT id, title, shortTitle, place, main_img, main_img_size FROM tl_cuaprojects WHERE publish ="1"  ORDER BY date DESC');
+        $responseObject = $rs->fetchAllAssoc();
+
+        return $responseObject;
+    }
+
      /**
      * Run the controller
      *

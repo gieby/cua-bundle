@@ -25,8 +25,7 @@ class AjaxController extends Controller
 
         if($cat == 'project') {
             if($id == 'list') {
-                $response = new JsonResponse('It works');
-                $response->send();
+                $data = $controller->fetchAllProjects();
             }
             $data = $controller->fetchProject($id);
         } else {
