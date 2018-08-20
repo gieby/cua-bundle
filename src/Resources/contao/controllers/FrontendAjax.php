@@ -163,7 +163,7 @@ class FrontendAjax extends \Frontend
      * @return string
      */
     public function fetchAllProjects() {
-        $rs = \Database::getInstance()->prepare('SELECT id, title, shortTitle, place, main_img, main_img_size FROM tl_cuaprojects WHERE publish ="1"  ORDER BY date DESC')->execute();
+        $rs = \Database::getInstance()->prepare('SELECT id, title, shortTitle, place, main_img, main_img_size FROM tl_cuaprojects WHERE publish ="1" ORDER BY date DESC')->execute();
         $responseObject = $rs->fetchAllAssoc();
 
         $returnData = [];
