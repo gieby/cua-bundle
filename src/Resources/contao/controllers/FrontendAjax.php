@@ -166,7 +166,7 @@ class FrontendAjax extends \Frontend
         $rs = \Database::getInstance()->prepare('SELECT id, title, shortTitle, place, main_img, main_img_size FROM tl_cuaprojects WHERE publish ="1"  ORDER BY date DESC')->execute();
         $responseObject = $rs->fetchAllAssoc();
 
-        return $responseObject;
+        return json_encode($responseObject);
     }
 
      /**
