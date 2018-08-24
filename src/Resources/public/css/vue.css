@@ -40,3 +40,24 @@
 .projectPlace {
     margin-left: 1em;
 }
+
+@keyframes wobble {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 10em;
+    }
+}
+
+#details {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    grid-column: span 3;
+    background-color: #ededed;
+    animation-name: wobble;
+    animation-duration: 4s;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+}

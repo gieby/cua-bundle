@@ -23,15 +23,17 @@ function lazyLoadThumbs() {
     }
 }
 
-function checkForSameRow(el,ref) {
-	var ref = ref || el.offsetTop;
-	var result = el;
-    if(ref == el.nextElementSibling.offsetTop) {
-        result = el.nextElementSibling;
+function checkForSameRow(el,ref) {  
+    var ref = ref || el.offsetTop;
+    var result = el;
+
+    if(ref != el.nextElementSibling.offsetTop && ref != el.nextElementSibling.nextElementSibling.offsetTop) {
+        return result;
     } else {
-        result = checkForSameRow(el.nextElementSibling,ref);
+        result = checkForSameRow(el.nextElementSibling, ref);
     }
-	return result;
+
+    return result;
 }
 
 function setupList() {
@@ -47,10 +49,9 @@ function setupList() {
         },
         methods : {
             displayDetails : function(event) {
-                console.log(' ===== NEUER CLICK =====');
-                console.log(event.target.dataset.id);
-                console.log(checkForSameRow(event.target));
-                console.log(' =======================');
+                var details = document.getElementById('details');
+                var reference = checkForSameRow(event.target);
+                vm.el.insertBefore(details, reference);
             }
         }
     });
@@ -59,4 +60,4 @@ function setupList() {
 var vm;
 
 window.addEventListener("load", lazyLoadThumbs);
-window.addEventListener("load",setupList);
+window.addEventListener("load", setupList);
