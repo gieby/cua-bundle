@@ -1,6 +1,6 @@
 <ul id="projects">
     <li v-for="project in projects" class="entry">
-        <figure class="projectThumb" style="background-image:url({{ project.thumbnail }})">
+        <figure class="projectThumb" :style="{ 'background-image': 'url(' + project.thumbnail + ')' }">
         </figure>
         <div class="title">
             <span class="projectTitle">{{ project.title }}</span>
