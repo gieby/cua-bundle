@@ -28,7 +28,7 @@ class ModuleProjectsList extends \Module {
         $GLOBALS['TL_JAVASCRIPT'][] = $cuaAssetsDir . '/js/projectList.js|static';
 
         // Query bauen
-        $query = 'SELECT id, title, shortTitle, place, main_img, main_img_size FROM tl_cuaprojects WHERE publish ="1"  ORDER BY date DESC';
+        $query = 'SELECT id, title, shortTitle, place, main_img, main_img_size, status, category FROM tl_cuaprojects WHERE publish ="1"  ORDER BY date DESC';
        
         $rs = \Database::getInstance()
             ->query($query);
