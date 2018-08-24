@@ -47,7 +47,10 @@ function setupList() {
         },
         methods : {
             displayDetails : function(event) {
-                console.log(event)
+                console.log(' ===== NEUER CLICK =====');
+                console.log(event.target.dataset.id);
+                console.log(checkForSameRow(event.target));
+                console.log(' =======================');
             }
         }
     });
