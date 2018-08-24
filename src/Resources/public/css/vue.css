@@ -8,10 +8,20 @@
     padding-bottom: 27.5132%;
 }
 
-.projectThumb img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+
+#projects {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#projects .entry {
+    max-width: 32%;
+}
+
+.projectThumb {
+    padding-bottom: 56.6449%;
+    background-color: #ededed;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
