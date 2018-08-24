@@ -23,16 +23,21 @@ function lazyLoadThumbs() {
     }
 }
 
-var vm = new Vue({
-    el : '#projects',
-    data : {
-        projects : []
-    },
-    created: function () {
-        httpGetAsync('https://www.codeunique.de/ajax/project/list', function(data) {
-            vm.projects = JSON.parse(data);
-        })
-    }
-});
+function setupList() {
+    vm = new Vue({
+        el : '#projects',
+        data : {
+            projects : []
+        },
+        created: function () {
+            httpGetAsync('https://www.codeunique.de/ajax/project/list', function(data) {
+                vm.projects = JSON.parse(data);
+            })
+        }
+    });
+}
 
-window.addEventListener("load", function() {lazyLoadThumbs()});
+var vm;
+
+window.addEventListener("load", lazyLoadThumbs);
+windows.addEventListener("load",setupList);
