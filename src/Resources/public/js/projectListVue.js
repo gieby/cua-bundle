@@ -51,7 +51,7 @@ function setupList() {
             displayDetails : function(event) {
                 var details = document.getElementById('details');
                 var reference = checkForSameRow(event.target);
-                vm.el.insertBefore(details, reference);
+                document.getElementById('#projects').insertBefore(details, reference);
             }
         }
     });

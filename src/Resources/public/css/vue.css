@@ -58,6 +58,6 @@
     background-color: #ededed;
     animation-name: wobble;
     animation-duration: 4s;
-    animation-direction: reverse;
+    animation-direction: alternate;
     animation-iteration-count: infinite;
 }
