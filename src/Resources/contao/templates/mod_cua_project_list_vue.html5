@@ -1,5 +1,5 @@
 <ul id="projects">
-    <li v-for="project in projects" class="entry"">
+    <li v-for="project in projects" class="entry">
         <figure class="projectThumb">
             {{ project.thumbnail }}
         </figure>
