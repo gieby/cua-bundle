@@ -40,4 +40,4 @@ function setupList() {
 var vm;
 
 window.addEventListener("load", lazyLoadThumbs);
-windows.addEventListener("load",setupList);
+window.addEventListener("load",setupList);
