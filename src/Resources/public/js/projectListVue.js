@@ -1,17 +1,17 @@
-var getJSON = function(url, res, err) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.responseType = 'json';
-    xhr.onload = function() {
-      var status = xhr.status;
-      if (status === 200) {
-        res(xhr.response);
-      } else {
-        err(status);
-      }
-    };
-    xhr.send();
-};
+function httpGetAsync(yourUrl,callback){
+    var req = new XMLHttpRequest(); // a new request
+    req.open("GET",yourUrl,true);
+    req.onload = function e() {
+        if(req.status === 200) {
+            callback(req.responseText);
+        }
+    }
+    req.send(null);         
+}
+
+function handleJSON(data) {
+    console.log(JSON.parse(data));
+}
 
 function lazyLoadThumbs() {
     var thumbs = document.getElementsByClassName('projectThumb');
@@ -24,9 +24,3 @@ function lazyLoadThumbs() {
 }
 
 window.addEventListener("load", function() {lazyLoadThumbs()});
-
-function getProjects() {
-    var projects = getJSON('https://www.codeunique.de/ajax/project/list',JSON.parse,console.log);
-
-    console.log(projects);
-}
