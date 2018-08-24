@@ -1,22 +1,7 @@
-<div class="<?php echo $this->class; ?> mod_cua_project_list cua_projects block"<?php echo $this->cssID; ?>>
-    <?php if ($this->headline): ?>
-        <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
-    <?php endif; ?>
-
-    <?php foreach ($this->projects as $project): ?>
-        <div class="cua_project_entry<?php echo $project->css; ?>" data-row="<?= $project->row; ?>" data-id="<?php echo $project->id; ?>" onClick="handlePortfolioClick(this)" data-active="false">
-            <figure class="projectThumb">
-                <img data-src="<?php echo $project->thumbnail; ?>" />
-            </figure>
-            <div class="cua_project_entry_info"><p class="projectTitle"><?php echo $project->title; ?></p><p class="projectPlace"><?php echo $project->place; ?></p></div>
-        </div>
-    <?php endforeach; ?>
-</div>
-
 <ul id="projects">
-    <li v-for="project in projects" class="entry" :id="{{ project.id }}">
+    <li v-for="project in projects" class="entry"">
         <figure class="projectThumb">
-            <img src="url({{ project.thumbnail }})" />
+            <img v-attr="src: project.thumbnail" />
         </figure>
         <div class="title">
             <span class="projectTitle">{{ project.title }}</span>
