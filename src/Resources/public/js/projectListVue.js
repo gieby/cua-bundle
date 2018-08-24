@@ -10,7 +10,7 @@ function httpGetAsync(yourUrl,callback){
 }
 
 function handleJSON(data) {
-    console.log(JSON.parse(data));
+    return JSON.parse(data);
 }
 
 function lazyLoadThumbs() {
@@ -22,5 +22,17 @@ function lazyLoadThumbs() {
         pic.removeAttribute('data-src');
     }
 }
+
+var projects = new Vue({
+    el : '#projects',
+    data : {
+        projects : []
+    },
+    created: function () {
+        httpGetAsync('https://www.codeunique.de/ajax/project/list', function(data) {
+            projects.data.projects = JSON.parse(data);
+        })
+    }
+});
 
 window.addEventListener("load", function() {lazyLoadThumbs()});

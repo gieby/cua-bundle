@@ -26,7 +26,6 @@ class ModuleProjectsListVue extends \Module {
         // jetzt binden wir noch unserer eigenes JavaScript ein - damit liegt das nicht in der Seitenvorlage rum usw.$_COOKIE
         $cuaAssetsDir = 'web/bundles/yupdesigncua';
         $GLOBALS['TL_JAVASCRIPT'][] = $cuaAssetsDir . '/js/projectListVue.js|static';
-        //$GLOBALS['TL_JAVASCRIPT'][] = $cuaAssetsDir . '/js/vue.js|static';
         $GLOBALS['TL_CSS'][] = $cuaAssetsDir . '/css/vue.css|static';
 
         /**
