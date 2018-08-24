@@ -1,8 +1,8 @@
 #projects {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 2%;
-    grid-row-gap: 2%;
+    grid-column-gap: 1.5em;
+    grid-row-gap: .5em;
     justify-items: stretch;
     align-items: stretch;
     grid-auto-flow: dense;
@@ -11,7 +11,7 @@
 #projects .entry { 
 }
 
-#projects .entry.wide {
+.entry.wide {
     grid-column: span 2;
 }
 
@@ -24,4 +24,17 @@
 
 .wide .projectThumb {
     padding-bottom: 27.5132%;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.projectTitle {
+
+}
+
+.projectPlace {
+    margin-left: 1em;
 }
