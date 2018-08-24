@@ -23,14 +23,14 @@ function lazyLoadThumbs() {
     }
 }
 
-var projects = new Vue({
+var vm = new Vue({
     el : '#projects',
     data : {
         projects : []
     },
     created: function () {
         httpGetAsync('https://www.codeunique.de/ajax/project/list', function(data) {
-            projects.data.projects = JSON.parse(data);
+            vm.projects = JSON.parse(data);
         })
     }
 });

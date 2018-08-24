@@ -16,7 +16,7 @@
 <ul id="projects">
     <li v-for="project in projects" class="entry" data-id="{{project.id}}">
         <figure class="projectThumb">
-            <img src=""{{project.thumbnail}}
+            <img src="{{project.thumbnail}}">
         </figure>
         <div class="title">
             <span class="projectTitle">{{project.title}}</span>
