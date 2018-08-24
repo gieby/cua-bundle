@@ -23,6 +23,17 @@ function lazyLoadThumbs() {
     }
 }
 
+function checkForSameRow(el,ref) {
+	var ref = ref || el.offsetTop;
+	var result = el;
+    if(ref == el.nextElementSibling.offsetTop) {
+        result = el.nextElementSibling;
+    } else {
+        result = checkForSameRow(el.nextElementSibling,ref);
+    }
+	return result;
+}
+
 function setupList() {
     vm = new Vue({
         el : '#projects',

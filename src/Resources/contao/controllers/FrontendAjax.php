@@ -173,6 +173,7 @@ class FrontendAjax extends \Frontend
             $dataObject->id = $project['id'];
             $dataObject->title = ($project['shortTitle'] != '') ? $project['shortTitle'] : $project['title'];
             $dataObject->place = $project['place'];
+            $dataObject->wide = ($project['main_img_size'] != '') ? ' wide' : '';
 
             if ($project['main_img'] != '') {
                 $fileModel = \FilesModel::findByUuid($project['main_img']);

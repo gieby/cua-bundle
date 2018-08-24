@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 1.5em;
-    grid-row-gap: .5em;
+    grid-row-gap: .3em;
     justify-items: stretch;
     align-items: stretch;
     grid-auto-flow: dense;
@@ -29,6 +29,7 @@
 .title {
     display: flex;
     justify-content: space-between;
+    margin-top: .2em;
 }
 
 .projectTitle {
