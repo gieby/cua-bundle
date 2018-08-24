@@ -1,7 +1,7 @@
 <ul id="projects">
     <li v-for="project in projects" class="entry"">
         <figure class="projectThumb">
-            <img v-bind:src="project.thumbnail" />
+            {{ project.thumbnail }}
         </figure>
         <div class="title">
             <span class="projectTitle">{{ project.title }}</span>
