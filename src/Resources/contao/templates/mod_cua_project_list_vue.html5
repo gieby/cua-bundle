@@ -1,10 +1,13 @@
 <ul id="projects">
-    <li v-for="project in projects" :class="{ 'entry' + project.wide }" :data-id="project.id">
+    <li v-for="project in projects" class="entry" :class="project.wide" :data-id="project.id" v-on:click="displayDetails">
         <figure class="projectThumb" :style="{ 'background-image': 'url(' + project.thumbnail + ')' }">
         </figure>
         <div class="title">
             <span class="projectTitle">{{ project.title }}</span>
             <span class="projectPlace">{{ project.place }}</span>
         </div>
+    </li>
+    <li id="details">
+        
     </li>
 </ul>

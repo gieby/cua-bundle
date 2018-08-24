@@ -44,6 +44,11 @@ function setupList() {
             httpGetAsync('https://www.codeunique.de/ajax/project/list', function(data) {
                 vm.projects = JSON.parse(data);
             })
+        },
+        methods : {
+            displayDetails : function(event) {
+                console.log(event)
+            }
         }
     });
 }
