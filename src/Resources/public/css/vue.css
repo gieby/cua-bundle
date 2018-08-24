@@ -1,22 +1,19 @@
-.mod_cua_project_list_vue .cua_project_entry .projectThumb{
-    position: relative;
-    background-color: #ededed;
-    padding-bottom: 56.6449%;
-}
-
-.mod_cua_project_list_vue .cua_project_entry.cua_project_wide .projectThumb {
-    padding-bottom: 27.5132%;
-}
-
-
 #projects {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 2%;
+    grid-row-gap: 2%;
+    justify-items: stretch;
+    align-items: stretch;
+    grid-auto-flow: dense;
 }
 
 #projects .entry {
-    max-width: 32%;
+    grid-column-span: 1; 
+}
+
+#projects .entry.wide {
+    grid-column-span: 2;
 }
 
 .projectThumb {
@@ -24,4 +21,8 @@
     background-color: #ededed;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.wide .projectThumb {
+    padding-bottom: 27.5132%;
 }
