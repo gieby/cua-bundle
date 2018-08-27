@@ -52,3 +52,16 @@ function setupList() {
 var vm;
 
 window.addEventListener("load", setupList);
+
+/**
+ * <li id="details">
+        <div id="detail-slider">
+            {{ detail.slider }}
+        </div>
+        <div id="detail-content">
+            <div id="project-title">{{ detail.title }}</div>
+            <div id="project-place">{{ detail.place }}</div>
+            <div id="project-desc">{{ detail.description }}</div>
+        </div>
+    </li>
+ */
