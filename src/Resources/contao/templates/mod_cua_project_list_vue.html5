@@ -1,5 +1,5 @@
 <ul id="projects">
-    <li v-for="project in projects" class="entry" :class="project.wide" :data-id="project.id" v-on:click="displayDetails">
+    <li v-for="project in projects" class="entry" :class="project.wide" :data-id="project.id" data-row="0" v-on:click="displayDetails">
         <figure class="projectThumb" :style="{ 'background-image': 'url(' + project.thumbnail + ')' }">
         </figure>
         <div class="title">

@@ -1,5 +1,5 @@
 function httpGetAsync(yourUrl,callback){
-    var req = new XMLHttpRequest(); // a new request
+    var req = new XMLHttpRequest();
     req.open("GET",yourUrl,true);
     req.onload = function e() {
         if(req.status === 200) {
@@ -9,30 +9,19 @@ function httpGetAsync(yourUrl,callback){
     req.send(null);         
 }
 
-function handleJSON(data) {
-    return JSON.parse(data);
-}
-
-function lazyLoadThumbs() {
-    var thumbs = document.getElementsByClassName('projectThumb');
-
-    for (let i = 0; i < thumbs.length; i++) {
-        var pic = thumbs.item(i).firstElementChild;
-        pic.setAttribute('src',pic.getAttribute('data-src'));
-        pic.removeAttribute('data-src');
-    }
-}
-
 function checkForSameRow(el,ref) {  
     var ref = ref || el.offsetTop;
     var result = el;
 
-    if(ref != el.nextElementSibling.offsetTop && ref != el.nextElementSibling.nextElementSibling.offsetTop) {
+    if(ref != el.nextElementSibling.offsetTop 
+        && ref != el.nextElementSibling.nextElementSibling.offsetTop 
+        && ref != el.nextElementSibling.nextElementSibling.nextElementSibling.offsetTop
+      ) {
         return result;
-    } else if (ref <= el.previousElementSibling.offsetTop) {
-        result = el.previousElementSibling;
-    } else {
+    } else if (el.nextElementSibling.classList.contains('entry') && ref == el.nextElementSibling.offsetTop) {
         result = checkForSameRow(el.nextElementSibling, ref);
+    } else {
+        result = checkForSameRow(el.nextElementSibling.nextElementSibling, ref);
     }
 
     return result;
@@ -47,7 +36,7 @@ function setupList() {
         created: function () {
             httpGetAsync('https://www.codeunique.de/ajax/project/list', function(data) {
                 vm.projects = JSON.parse(data);
-            })
+            });
         },
         methods : {
             displayDetails : function(event) {
@@ -61,5 +50,4 @@ function setupList() {
 
 var vm;
 
-window.addEventListener("load", lazyLoadThumbs);
 window.addEventListener("load", setupList);
