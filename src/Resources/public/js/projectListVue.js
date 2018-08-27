@@ -42,7 +42,7 @@ function setupList() {
             displayDetails : function(event) {
                 var details = document.getElementById('details');
                 var reference = checkForSameRow(event.target);
-                document.getElementById('projects').insertBefore(details, reference);
+                document.getElementById('projects').insertBefore(details, reference.nextElementSibling);
             }
         }
     });
