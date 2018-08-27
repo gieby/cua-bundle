@@ -32,7 +32,21 @@ function setupList() {
     vm = new Vue({
         el : '#projects',
         data : {
-            projects : []
+            projects : [],
+            detail : {
+                title : null,
+                place : null,
+                principal : null,
+                status : null,
+                task : null,
+                year_comp : null,
+                year_build : null,
+                cost : null,
+                url : null,
+                media : null,
+                description : null
+
+            }
         },
         created: function () {
             httpGetAsync('https://www.codeunique.de/ajax/project/list', function(data) {
@@ -56,7 +70,7 @@ window.addEventListener("load", setupList);
 /**
  * <li id="details">
         <div id="detail-slider">
-            {{ detail.slider }}
+            {{ detail.media }}
         </div>
         <div id="detail-content">
             <div id="project-title">{{ detail.title }}</div>

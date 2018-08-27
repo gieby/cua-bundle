@@ -8,24 +8,14 @@
         </div>
     </li>
     
-
-
     <li id="details">
-        <div id="detail-slider"></div>
+        <div id="detail-slider">
+            {{ detail.media }}
+        </div>
         <div id="detail-content">
-            <div id="project-title"></div>
-            <div id="project-place"></div>
-            <div id="project-desc">
-                <p>"Die Arbeit ist eine für den zweiten Blick. Das, was zunächst wie eine vielleicht etwas zu nüchterne und zu routinierte Bearbeitung der gestellten Aufgabe daherkommen mag, entwickelt bei genauerem Hinsehen eine bemerkenswerte Eleganz und Passgenauigkeit.</p>
-                <p>Der Entwurf setzt sich ernsthaft mit dem architektonischen Vokabular des Stadtteils Steilshoop auseinander, entwickelt daraus ein schönes kubisches Einstiegsbauwerk, und die Arbeit setzt auf überraschend einfache Art und Weise auf das Thema der Farbe. Die keramischen Wände der Haltestelle sind mal gelb/orange – vielleicht als Reminiszenz der Entstehungszeit des Stadtteils – mal weiß, je nach Blick und Bewegungsrichtung. Die Decke aus gepulvertem Lochblech hebt sich wie selbstverständlich ab und verzichtet wohl ganz bewusst auf allen modischen Zierrat und angestrengte Dekoration.</p>
-                <p>Zusammen mit dem schwarzen Terrazzo-Boden und den zweigesichtigen und zweifarbigen Wänden entsteht eine stimmige Atmosphäre.</p>
-                <p>....</p>
-                <p>In Summe handelt es sich um eine sehr schöne Arbeit, die einen respektvollen zeitgenössischen und nahezu künstlerischen Beitrag für Steilshoop formuliert."</p>
-                <p>***</p>
-                <p>[Auszug aus dem Juryprotokoll]</p>
-            </div>
+            <div id="project-title">{{ detail.title }}</div>
+            <div id="project-place">{{ detail.place }}</div>
+            <div id="project-desc">{{ detail.description }}</div>
         </div>
     </li>
-
-
 </ul>

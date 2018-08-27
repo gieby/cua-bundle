@@ -61,24 +61,25 @@
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 100%;
     grid-gap: 1.5em;
-
-    overflow: hidden;
 
     animation-name: expand;
     animation-duration: 4s;
     animation-fill-mode: forwards;
+    animation-play-state: paused;
 }
 
 #detail-slider {
     margin: 2em 0;
     grid-column: span 2;
     background-color: #d2d2d2;
+    overflow: hidden;
 }
 
 #detail-content {
     margin: 2em 0;
     grid-column: 3;
     background-color: #999999;
+    overflow: hidden;
 }
