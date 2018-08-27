@@ -56,6 +56,9 @@ function setupList() {
         methods : {
             displayDetails : function(event) {
                 var details = document.getElementById('details');
+                httpGetAsync('https://www.codeunique.de/ajax/project/' + event.target.dataset.id, function (data) {
+                    vm.detail = JSON.parse(data);
+                });
                 var reference = checkForSameRow(event.target);
                 document.getElementById('projects').insertBefore(details, reference.nextElementSibling);
             }
