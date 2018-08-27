@@ -29,6 +29,8 @@ function checkForSameRow(el,ref) {
 
     if(ref != el.nextElementSibling.offsetTop && ref != el.nextElementSibling.nextElementSibling.offsetTop) {
         return result;
+    } else if (ref <= el.previousElementSibling.offsetTop) {
+        result = el.previousElementSibling;
     } else {
         result = checkForSameRow(el.nextElementSibling, ref);
     }
