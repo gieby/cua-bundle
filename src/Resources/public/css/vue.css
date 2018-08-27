@@ -47,16 +47,37 @@
     }
 
     to {
-        height: 10em;
+        height: 31.2vw;
     }
 }
 
 #details {
+    grid-column: span 3;
+
     margin-top: 1.5em;
     margin-bottom: 1.5em;
-    grid-column: span 3;
-    background-color: #ededed;
+    padding: 2em 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 1.5em;
+
+    overflow: hidden;
+
     animation-name: expand;
     animation-duration: 4s;
     animation-fill-mode: forwards;
+}
+
+#detail-slider {
+    grid-column: 1 span 2;
+    background-color: rgba(#333,.6);
+}
+
+#detail-content {
+    grid-column: 3;
+    background-color: rgba(#333,.3);
 }

@@ -8,4 +8,16 @@
         </div>
     </li>
     
+
+
+    <li id="details">
+        <div id="detail-slider"></div>
+        <div id="detail-content">
+            <div id="project-title"></div>
+            <div id="project-place"></div>
+            <div id="project-desc"></div>
+        </div>
+    </li>
+
+
 </ul>
