@@ -10,7 +10,7 @@
     
     <li id="details">
         <div id="detail-slider">
-            {{ detail.media }}
+            <div v-html="detail.media"></div>
         </div>
         <div id="detail-content">
             <div id="project-title">{{ detail.title }}</div>
