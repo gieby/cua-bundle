@@ -73,11 +73,11 @@
 }
 
 #detail-slider {
-    grid-column: 1 span 2;
-    background-color: rgba(#333,.6);
+    grid-column: span 2;
+    background-color: #d2d2d2;
 }
 
 #detail-content {
     grid-column: 3;
-    background-color: rgba(#333,.3);
+    background-color: #999999;
 }
