@@ -9,13 +9,12 @@
     </li>
     
     <li id="details">
-        <div id="detail-slider">
-            <div v-html="detail.media"></div>
+        <div id="detail-slider" v-html="detail.media">
         </div>
         <div id="detail-content">
             <div id="project-title">{{ detail.title }}</div>
             <div id="project-place">{{ detail.place }}</div>
-            <div id="project-desc">{{ detail.description }}</div>
+            <div id="project-desc" v-html="detail.description"></div>
         </div>
     </li>
 </ul>
