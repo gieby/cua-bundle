@@ -58,7 +58,9 @@ function setupList() {
                 var details = document.getElementById('details');
                 httpGetAsync('https://www.codeunique.de/ajax/project/' + event.target.dataset.id, function (data) {
                     vm.detail = JSON.parse(data);
-                    jQuery('.mod_rocksolid_slider').rstSlider();
+                    setTimeout(() => {
+                        jQuery('.mod_rocksolid_slider').rstSlider();    
+                    }, 10);
                 });
                 var reference = checkForSameRow(event.target);
                 document.getElementById('projects').insertBefore(details, reference.nextElementSibling);
@@ -70,16 +72,3 @@ function setupList() {
 var vm;
 
 window.addEventListener("load", setupList);
-
-/**
- * <li id="details">
-        <div id="detail-slider">
-            {{ detail.media }}
-        </div>
-        <div id="detail-content">
-            <div id="project-title">{{ detail.title }}</div>
-            <div id="project-place">{{ detail.place }}</div>
-            <div id="project-desc">{{ detail.description }}</div>
-        </div>
-    </li>
- */
