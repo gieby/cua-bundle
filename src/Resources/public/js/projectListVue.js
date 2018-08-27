@@ -11,17 +11,18 @@ function httpGetAsync(yourUrl,callback){
 
 function checkForSameRow(el,ref) {  
     var ref = ref || el.offsetTop;
-    var result = el;
+    var result;
 
-    if(ref != el.nextElementSibling.offsetTop 
-        && ref != el.nextElementSibling.nextElementSibling.offsetTop 
-        && ref != el.nextElementSibling.nextElementSibling.nextElementSibling.offsetTop
-      ) {
-        return result;
-    } else if (el.nextElementSibling.classList.contains('entry') && ref == el.nextElementSibling.offsetTop) {
-        result = checkForSameRow(el.nextElementSibling, ref);
-    } else {
-        result = checkForSameRow(el.nextElementSibling.nextElementSibling, ref);
+    // vorherigen & nächsten Eintrag(!!) finden - Detail-Ansicht ignorieren
+    var prev = (el.previousElementSibling.classList.contains('entry')) ? el.previousElementSibling : el.previousElementSibling.previousElementSibling;
+    var next = (el.nextElementSibling.classList.contains('entry')) ? el.nextElementSibling : el.nextElementSibling.nextElementSibling;
+
+    if(ref < prev.offsetTop) {
+        result = prev.previousElementSibling;
+    } else if (ref == next.offsetTop) {
+        result = checkForSameRow(next,ref);
+    } else if (ref != next.offsetTop) {
+        result = el
     }
 
     return result;
