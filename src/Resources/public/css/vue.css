@@ -43,14 +43,7 @@
 
 @keyframes expand {
     0% {
-        padding-top: 0;
-        padding-bottom: 0;
         height: 0;
-    }
-
-    15% {
-        padding-top: 2em;
-        padding-bottom: 2em;
     }
 
     100% {
@@ -63,7 +56,6 @@
 
     margin-top: 1.5em;
     margin-bottom: 1.5em;
-    padding: 2em 0;
     border-top: 1px solid #333;
     border-bottom: 1px solid #333;
 
@@ -80,11 +72,13 @@
 }
 
 #detail-slider {
+    margin: 2em 0;
     grid-column: span 2;
     background-color: #d2d2d2;
 }
 
 #detail-content {
+    margin: 2em 0;
     grid-column: 3;
     background-color: #999999;
 }
