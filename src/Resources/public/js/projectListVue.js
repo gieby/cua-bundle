@@ -76,10 +76,10 @@ function initDetail() {detail = new Vue({
         description : null
     },
     created: function () {
-        document.getElementsById('details').classList.add('is-active');
+        document.getElementById('details').classList.add('is-active');
     },
     beforeUpdate: function () {
-        document.getElementsById('details').classList.add('is-closing');
+        document.getElementById('details').classList.add('is-closing');
     },
     methods: {
         loadDetails : function(id) {
