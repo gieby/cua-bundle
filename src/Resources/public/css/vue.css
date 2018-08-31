@@ -65,7 +65,7 @@
     grid-gap: 1.5em;
 
     animation-name: expand;
-    animation-duration: 4s;
+    animation-duration: 0s; /* 3s */
     animation-fill-mode: forwards;
     animation-play-state: paused;
 }
