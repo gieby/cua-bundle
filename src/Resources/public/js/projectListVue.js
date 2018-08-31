@@ -78,8 +78,10 @@ function initDetail() {detail = new Vue({
     methods: {
         loadDetails : function(id) {
             httpGetAsync('https://www.codeunique.de/ajax/project/' + id, function (httpData) {
+                var jsonData = JSON.parse(httpData); 
                 
-                console.log(JSON.parse(httpData));
+                detail.title = jsonData.title;
+                detail.media = jsonData.media;
                 
                 setTimeout(() => {
                     jQuery('.mod_rocksolid_slider').rstSlider();    
