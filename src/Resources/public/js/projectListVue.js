@@ -60,7 +60,7 @@ function setupList() {
 
 var vm,detail;
 
-function initDetail() {new Vue({
+function initDetail() {detail = new Vue({
     el: '#details',
     data : {
         title : null,
