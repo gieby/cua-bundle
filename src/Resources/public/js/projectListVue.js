@@ -16,13 +16,13 @@ function checkForSameRow(el,ref) {
     // vorherigen & nächsten Eintrag(!!) finden - Detail-Ansicht ignorieren
     if(el.previousElementSibling && el.previousElementSibling.classList.contains('entry')) {
         prev = el.previousElementSibling;
-    } else if(el.previousElementSibling.previousElementSibling) {
+    } else if(el.previousElementSibling && el.previousElementSibling.previousElementSibling) {
         prev = el.previousElementSibling.previousElementSibling;
     }
 
     if(el.nextElementSibling && el.nextElementSibling.classList.contains('entry')) {
         next = el.nextElementSibling;
-    } else if(el.nextElementSibling.nextElementSibling) {
+    } else if(el.nextElementSibling && el.nextElementSibling.nextElementSibling) {
         next = el.nextElementSibling.nextElementSibling;
     }
 
