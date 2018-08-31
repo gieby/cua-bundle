@@ -10,11 +10,11 @@
 </ul>
 
 <li id="details">
-    <div id="detail-slider" v-html="data.media">
+    <div id="detail-slider" v-html="media">
     </div>
     <div id="detail-content">
-        <div id="project-title">{{ data.title }}</div>
-        <div id="project-place">{{ data.place }}</div>
-        <div id="project-desc" v-html="data.description"></div>
+        <div id="project-title">{{ title }}</div>
+        <div id="project-place">{{ place }}</div>
+        <div id="project-desc" v-html="description"></div>
     </div>
 </li>
