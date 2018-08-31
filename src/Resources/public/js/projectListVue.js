@@ -58,9 +58,9 @@ function setupList() {
     });
 }
 
-var vm;
+var vm,detail;
 
-var detail = new Vue({
+function initDetail() {new Vue({
     el: '#details',
     data : {
         title : null,
@@ -87,5 +87,8 @@ var detail = new Vue({
             document.getElementById('projects').insertBefore(details, reference.nextElementSibling);
         }
     }
-})
+}
+)}
+
 window.addEventListener("load", setupList);
+window.addEventListener("load",initDetail);
