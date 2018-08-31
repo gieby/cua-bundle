@@ -62,23 +62,11 @@ var vm,detail;
 
 function initDetail() {detail = new Vue({
     el: '#details',
-    data : {
-        title : null,
-        place : null,
-        principal : null,
-        status : null,
-        task : null,
-        year_comp : null,
-        year_build : null,
-        cost : null,
-        url : null,
-        media : null,
-        description : null
-    },
+    props : ['title','place','principal','status','task','year_comp','year_build','cost','url','media','description'],
     methods: {
         loadDetails : function(id) {
             httpGetAsync('https://www.codeunique.de/ajax/project/' + id, function (data) {
-                detail.data = JSON.parse(data);
+                detail.props = JSON.parse(data);
                 setTimeout(() => {
                     jQuery('.mod_rocksolid_slider').rstSlider();    
                 }, 10);
