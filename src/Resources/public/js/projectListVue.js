@@ -43,21 +43,7 @@ function setupList() {
     vm = new Vue({
         el : '#projects',
         data : {
-            projects : [],
-            detail : {
-                title : null,
-                place : null,
-                principal : null,
-                status : null,
-                task : null,
-                year_comp : null,
-                year_build : null,
-                cost : null,
-                url : null,
-                media : null,
-                description : null
-
-            }
+            projects : []
         },
         created: function () {
             httpGetAsync('https://www.codeunique.de/ajax/project/list', function(data) {
@@ -66,15 +52,7 @@ function setupList() {
         },
         methods : {
             displayDetails : function(event) {
-                var details = document.getElementById('details');
-                httpGetAsync('https://www.codeunique.de/ajax/project/' + event.target.dataset.id, function (data) {
-                    vm.detail = JSON.parse(data);
-                    setTimeout(() => {
-                        jQuery('.mod_rocksolid_slider').rstSlider();    
-                    }, 10);
-                });
-                var reference = checkForSameRow(event.target);
-                document.getElementById('projects').insertBefore(details, reference.nextElementSibling);
+                detail.loadDetails(event.target.dataset.id);
             }
         }
     });
@@ -82,4 +60,32 @@ function setupList() {
 
 var vm;
 
+var detail = new Vue({
+    el: '#details',
+    data : {
+        title : null,
+        place : null,
+        principal : null,
+        status : null,
+        task : null,
+        year_comp : null,
+        year_build : null,
+        cost : null,
+        url : null,
+        media : null,
+        description : null
+    },
+    methods: {
+        loadDetails : function(id) {
+            httpGetAsync('https://www.codeunique.de/ajax/project/' + id, function (data) {
+                vm.detail = JSON.parse(data);
+                setTimeout(() => {
+                    jQuery('.mod_rocksolid_slider').rstSlider();    
+                }, 10);
+            });
+            var reference = checkForSameRow(document.querySelector('.entry[data-id="' + id + '"]'));
+            document.getElementById('projects').insertBefore(details, reference.nextElementSibling);
+        }
+    }
+})
 window.addEventListener("load", setupList);
