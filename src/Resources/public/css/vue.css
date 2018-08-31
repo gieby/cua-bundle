@@ -51,6 +51,16 @@
     }
 }
 
+@keyframes retract {
+    0% {
+        height: 31.2vw;
+    }
+
+    100% {
+        height: 0;
+    }
+}
+
 #details {
     grid-column: span 3;
 
@@ -65,9 +75,17 @@
     grid-gap: 1.5em;
 
     animation-name: expand;
-    animation-duration: 0s; /* 3s */
+    animation-duration: 3s;
     animation-fill-mode: forwards;
     animation-play-state: paused;
+}
+
+#details.is-active {
+    animation-play-state: running;
+}
+
+#details.is-closing {
+    animation-name: retract;
 }
 
 #detail-slider {

@@ -51,7 +51,7 @@ function setupList() {
             });
         },
         methods : {
-            displayDetails : function(event) {
+            displayDetails : function(event) {               
                 detail.loadDetails(event.target.dataset.id);
             }
         }
@@ -75,6 +75,12 @@ function initDetail() {detail = new Vue({
         media : null,
         description : null
     },
+    created: function () {
+        document.getElementsById('details').classList.add('is-active');
+    },
+    beforeUpdate: function () {
+        document.getElementsById('details').classList.add('is-closing');
+    },
     methods: {
         loadDetails : function(id) {
             httpGetAsync('https://www.codeunique.de/ajax/project/' + id, function (httpData) {
@@ -92,13 +98,14 @@ function initDetail() {detail = new Vue({
                 detail.media = jsonData.media;
                 detail.description = jsonData.description;
 
-                
                 setTimeout(() => {
                     jQuery('.mod_rocksolid_slider').rstSlider();    
                 }, 10);
+
+                var reference = checkForSameRow(document.querySelector('.entry[data-id="' + id + '"]'));
+                document.getElementById('projects').insertBefore(details, reference.nextElementSibling);
+                document.getElementById('details').classList.remove('is-closing');
             });
-            var reference = checkForSameRow(document.querySelector('.entry[data-id="' + id + '"]'));
-            document.getElementById('projects').insertBefore(details, reference.nextElementSibling);
         }
     }
 }
