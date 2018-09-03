@@ -84,9 +84,7 @@ function initDetail() {detail = new Vue({
         document.getElementById('projects').insertBefore(details, reference.nextElementSibling);
     },
     updated: function () {
-        window.addEventListener('transitionend', function() {
-            document.getElementById('details').classList.remove('is-closing');
-        });
+        document.getElementById('details').classList.remove('is-closing');
     },
     methods: {
         loadDetails : function(id) {
