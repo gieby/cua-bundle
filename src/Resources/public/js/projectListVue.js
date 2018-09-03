@@ -78,7 +78,7 @@ function initDetail() {detail = new Vue({
     created: function () {
     },
     beforeUpdate: function () {
-        var reference = checkForSameRow(document.querySelector('.entry[data-id="' + id + '"]'));
+        var reference = checkForSameRow(document.querySelector('.entry[data-id="' + detail.id + '"]'));
         document.getElementById('projects').insertBefore(details, reference.nextElementSibling);
     },
     afterUpdate: function () {
@@ -86,6 +86,7 @@ function initDetail() {detail = new Vue({
     },
     methods: {
         loadDetails : function(id) {
+            detail.id = id;
             document.getElementById('details').classList.add('is-closing');
             httpGetAsync('https://www.codeunique.de/ajax/project/' + id, function (httpData) {
                 var jsonData = JSON.parse(httpData); 
