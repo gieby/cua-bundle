@@ -78,30 +78,30 @@ function initDetail() {detail = new Vue({
     created: function () {
     },
     beforeUpdate: function () {
-        var reference = checkForSameRow(document.querySelector('.entry[data-id="' + detail.id + '"]'));
+        var reference = checkForSameRow(document.querySelector('.entry[data-id="' + this.id + '"]'));
         document.getElementById('projects').insertBefore(details, reference.nextElementSibling);
     },
-    afterUpdate: function () {
+    updated: function () {
         document.getElementById('details').classList.remove('is-closing');
     },
     methods: {
         loadDetails : function(id) {
-            detail.id = id;
+            this.id = id;
             document.getElementById('details').classList.add('is-closing');
             httpGetAsync('https://www.codeunique.de/ajax/project/' + id, function (httpData) {
                 var jsonData = JSON.parse(httpData); 
                 
-                detail.title = jsonData.title;
-                detail.place = jsonData.place;
-                detail.principal = jsonData.principal;
-                detail.status = jsonData.status;
-                detail.task = jsonData.task;
-                detail.year_comp = jsonData.year_comp;
-                detail.year_build = jsonData.year_build;
-                detail.cost = jsonData.cost;
-                detail.url = jsonData.url;
-                detail.media = jsonData.media;
-                detail.description = jsonData.description;
+                this.title = jsonData.title;
+                this.place = jsonData.place;
+                this.principal = jsonData.principal;
+                this.status = jsonData.status;
+                this.task = jsonData.task;
+                this.year_comp = jsonData.year_comp;
+                this.year_build = jsonData.year_build;
+                this.cost = jsonData.cost;
+                this.url = jsonData.url;
+                this.media = jsonData.media;
+                this.description = jsonData.description;
 
                 setTimeout(() => {
                     jQuery('.mod_rocksolid_slider').rstSlider();    
