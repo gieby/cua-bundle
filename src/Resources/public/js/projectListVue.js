@@ -78,12 +78,13 @@ function initDetail() {detail = new Vue({
     created: function () {
     },
     beforeUpdate: function () {
+        document.getElementById('details').classList.add('is-active');
         document.getElementById('details').classList.add('is-closing');
         var reference = checkForSameRow(document.querySelector('.entry[data-id="' + this.id + '"]'));
         document.getElementById('projects').insertBefore(details, reference.nextElementSibling);
     },
     updated: function () {
-        addEventListener('transitionend', function() {
+        window.addEventListener('transitionend', function() {
             document.getElementById('details').classList.remove('is-closing');
         });
     },
