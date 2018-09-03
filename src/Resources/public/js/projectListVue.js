@@ -78,16 +78,18 @@ function initDetail() {detail = new Vue({
     created: function () {
     },
     beforeUpdate: function () {
+        document.getElementById('details').classList.add('is-closing');
         var reference = checkForSameRow(document.querySelector('.entry[data-id="' + this.id + '"]'));
         document.getElementById('projects').insertBefore(details, reference.nextElementSibling);
     },
     updated: function () {
-        document.getElementById('details').classList.remove('is-closing');
+        addEventListener('transitionend', function() {
+            document.getElementById('details').classList.remove('is-closing');
+        });
     },
     methods: {
         loadDetails : function(id) {
             this.id = id;
-            document.getElementById('details').classList.add('is-closing');
             httpGetAsync('https://www.codeunique.de/ajax/project/' + id, function (httpData) {
                 var jsonData = JSON.parse(httpData); 
                 
